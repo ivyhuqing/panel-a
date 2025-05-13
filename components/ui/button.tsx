@@ -1,26 +1,31 @@
 import React from "react";
+import clsx from "clsx"; // 必须要有这行
 
-interface ButtonProps {
-  label?: string; // 👈 已改为可选，防止报错
-  onClick?: () => void;
-  children?: React.ReactNode;
-  variant?: "primary" | "secondary";
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "primary" | "secondary" | "outline";
+  size?: "sm" | "md" | "lg";
 }
 
 export const Button: React.FC<ButtonProps> = ({
-  label,
   variant = "primary",
+  size = "md",
+  className,
   ...props
 }) => {
-  const base = "px-4 py-2 rounded font-semibold text-sm";
-  const variants = {
+  const baseStyle = "rounded px-4 py-2 font-medium focus:outline-none transition";
+  const variantStyle = {
     primary: "bg-blue-600 text-white hover:bg-blue-700",
-    secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300",
-  };
+    secondary: "bg-gray-300 text-black hover:bg-gray-400",
+    outline: "border border-gray-400 text-gray-700 hover:bg-gray-100",
+  }[variant];
+
+  const sizeStyle = {
+    sm: "text-sm",
+    md: "text-base",
+    lg: "text-lg",
+  }[size];
 
   return (
-    <button {...props} className={`\${base} \${variants[variant]}`}>
-      {label}
-    </button>
+    <button className={clsx(baseStyle, variantStyle, sizeStyle, className)} {...props} />
   );
 };
