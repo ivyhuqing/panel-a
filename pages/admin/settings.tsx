@@ -47,15 +47,12 @@ export default function AdminSettingsPage() {
                   </ul>
                 </td>
                 <td className="px-4 py-3">
-                  <Badge
-                    className={
-                      r.status === "启用"
-                        ? "bg-green-500 text-white"
-                        : "bg-gray-400 text-white"
-                    }
-                  >
-                    {r.status}
-                  </Badge>
+                <Badge label={r.status} color={
+  r.status === "启用" ? "green" :
+  r.status === "停用" ? "red" :
+  "gray"
+} />
+
                 </td>
                 <td className="px-4 py-3 space-x-2">
                   <Button size="sm">编辑</Button>
