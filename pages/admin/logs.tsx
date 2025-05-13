@@ -62,17 +62,14 @@ export default function AdminLogsPage() {
                 <td className="px-4 py-3">{log.target}</td>
                 <td className="px-4 py-3">{log.time}</td>
                 <td className="px-4 py-3">
-                  <Badge
-                    className={
-                      log.level === "高风险"
-                        ? "bg-red-500 text-white"
-                        : log.level === "提醒"
-                        ? "bg-yellow-400 text-white"
-                        : "bg-gray-400 text-white"
-                    }
-                  >
+            <Badge label={log.level} color={
+                   log.level === "高风险" ? "red" :
+                     log.level === "中风险" ? "gray" :
+                      "green"
+                     } />
+
                     {log.level}
-                  </Badge>
+                  
                 </td>
               </tr>
             ))}
