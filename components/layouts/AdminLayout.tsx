@@ -1,5 +1,4 @@
 // /components/layouts/AdminLayout.tsx
-import { AdminLayout } from "@/components/layout/AdminLayout";
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
