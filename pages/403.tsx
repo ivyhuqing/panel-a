@@ -12,7 +12,9 @@ export default function AccessDeniedPage() {
       <p className="text-gray-600 mb-6">
         {t("access_denied.message")}
       </p>
-      <Button onClick={() => router.push("/")}>{t("go_home")}</Button>
+      <Button label="Go Home" onClick={() => router.push("/")}>
+  {t("go_home")}
+</Button>
     </div>
   );
 }

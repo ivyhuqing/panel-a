@@ -1,9 +1,12 @@
 import React from "react";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  label: string;
-  variant?: "primary" | "secondary";
+interface ButtonProps {
+  label?: string; // 👈 改为可选，防止将来忘记传
+  onClick?: () => void;
+  children?: React.ReactNode;
+  ...
 }
+
 
 export const Button: React.FC<ButtonProps> = ({ label, variant = "primary", ...props }) => {
   const base = "px-4 py-2 rounded font-semibold text-sm";
