@@ -10,9 +10,7 @@ export default function AccessDeniedPage() {
     <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-4xl font-bold mb-4">{t("access_denied.title")}</h1>
       <p className="text-gray-600 mb-6">{t("access_denied.message")}</p>
-      <Button label="Go Home" onClick={() => router.push("/")}>
-        {t("go_home")}
-      </Button>
+      <Button onClick={() => router.push("/")}>Go Home</Button>
     </div>
   );
 }
