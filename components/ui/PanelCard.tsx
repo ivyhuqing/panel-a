@@ -1,9 +1,15 @@
-import { ReactNode } from "react";
+import React from "react";
 
-export function PanelCard({ children }: { children: ReactNode }) {
+interface PanelCardProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export const PanelCard: React.FC<PanelCardProps> = ({ children, className }) => {
   return (
-    <div className="bg-white shadow rounded-lg p-6">
+    <div className={`bg-white shadow-md rounded-lg p-6 mb-6 ${className || ''}`}>
       {children}
     </div>
   );
-}
+};
+
