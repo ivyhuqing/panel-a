@@ -8,7 +8,7 @@ export default function ContentPage() {
   return (
     <AdminLayout>
       <div className="p-6">
-        <SectionTitle>Content Management</SectionTitle>
+        <SectionTitle title="Content Management" />
         <PanelCard>
           <ContentForm />
         </PanelCard>
