@@ -1,9 +1,0 @@
-import { ReactNode } from "react";
-
-export function SectionTitle({ children }: { children: ReactNode }) {
-  return (
-    <h2 className="text-xl font-semibold text-indigo-800 mb-4">
-      {children}
-    </h2>
-  );
-}
